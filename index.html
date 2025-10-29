@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library</title>
+    <script src="https://kit.fontawesome.com/3c140c65d5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <header>
+        <h1 id="heading">Library</h1>
+    </header>
+
+    <!--Formular in einem Dialog -->
+    <dialog id="new-book-dialog">
+        <form method="dialog">
+            <div>
+                <label for="title">
+                    <input type="text" name="title" id="title" placeholder="Titel" required>
+                </label>
+                <label for="author">
+                    <input type="text" name="author" id="author" placeholder="Autor" required>
+                </label>
+                <label for="pages">
+                    <input type="text" name="pages" id="pages" placeholder="Seitenanzahl" required>
+                </label>
+                <label for="read">
+                    <input type="checkbox" name="read" id="read">
+                    Bereits gelesen?
+                </label>
+            </div>
+            <div>
+                <input type="submit" id="add-button" value="Hinzufügen">
+                <input type="submit" name="close-dialog" id="close-dialog" value="Schließen">
+            </div>
+        </form>
+    </dialog>
+    <div id="button-div">
+        <button id="add-new-book">+ Neues Buch hinzufügen</button>
+    </div>
+    <output></output>
+
+    <script src="./script.js"></script>
+</body>
+</html>
