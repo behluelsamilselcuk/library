@@ -1,89 +1,62 @@
 # 📚 MyLibrary – Bücherverwaltung mit HTML/CSS/JavaScript
 
-**Projektstatus:** ✅ Abgeschlossen
+**Projektstatus:** ✅ Abgeschlossen (Refactoring mit Klassen abgeschlossen)
 
 **Beschreibung:**  
-MyLibrary ist eine Webanwendung zur Verwaltung einer digitalen Bibliothek. Nutzer können Bücher hinzufügen, anzeigen, den Lesestatus ändern und Bücher löschen. Die Anwendung ist vollständig in Vanilla JavaScript geschrieben und nutzt HTML und CSS für die Benutzeroberfläche.
+MyLibrary ist eine Webanwendung zur Verwaltung einer digitalen Bibliothek. Nutzer können Bücher hinzufügen, anzeigen, den Lesestatus ändern und Bücher löschen. Die Anwendung ist vollständig in **Vanilla JavaScript** geschrieben und verwendet **JavaScript-Klassen** zur Modellierung der Bücher. HTML und CSS sorgen für die Benutzeroberfläche.
 
 ## 🔧 Funktionen
 
-### `Book(title, author, pages, read)`
-Erstellt ein Buchobjekt mit folgenden Eigenschaften:
-- `id`: automatisch generierte UUID
-- `title`: Titel des Buches
-- `author`: Autor des Buches
-- `pages`: Seitenanzahl
-- `read`: Boolean, ob das Buch gelesen wurde
+### `class Book`
 
-### `Book.prototype.toggleReadStatus()`
-Prototyp-Methode, die den `read`-Status eines Buches umschaltet (`true` ⇄ `false`).
+Definiert ein Buchobjekt mit folgenden Eigenschaften:
+
+*   `id`: automatisch generierte UUID
+*   `title`: Titel des Buches
+*   `author`: Autor des Buches
+*   `pages`: Seitenanzahl
+*   `read`: Boolean, ob das Buch gelesen wurde
+
+#### `toggleReadStatus()`
+
+Instanzmethode, die den `read`-Status eines Buches umschaltet (`true` ⇄ `false`).
 
 ### `addBookToLibrary(title, author, pages, read)`
-Erstellt ein neues Buch und fügt es dem Array `myLibrary` hinzu.
+
+Erstellt ein neues Buch-Objekt und fügt es dem Array `myLibrary` hinzu.
 
 ### `displayBooks()`
+
 Rendert alle Bücher aus `myLibrary` im HTML-Element mit der ID `library`. Jedes Buch erhält:
-- Eine Schaltfläche zum Entfernen („Löschen“)
-- Eine Schaltfläche zum Ändern des Lesestatus („Lesestatus ändern“)
-- Beide Buttons sind über ein `data-id`-Attribut mit dem jeweiligen Buchobjekt verknüpft
+
+*   Eine Schaltfläche zum Entfernen („Löschen“)
+*   Eine Schaltfläche zum Ändern des Lesestatus („Lesestatus ändern“)
+*   Beide Buttons sind über ein `data-id`-Attribut mit dem jeweiligen Buchobjekt verknüpft
 
 ## 🖥️ Benutzeroberfläche
 
-- Öffnen eines Dialogs zur Eingabe neuer Bücher
-- Hinzufügen eines Buches über das Formular
-- Schließen des Dialogs
-- Dynamische Anzeige aller Bücher mit Interaktionsmöglichkeiten
+*   Dialog zur Eingabe neuer Bücher
+*   Formular zum Hinzufügen eines Buches
+*   Dynamische Anzeige aller Bücher mit Interaktionsmöglichkeiten
 
-## 📋 HTML-Grundstruktur
+## 🧪 Git-Branch-Workflow
 
-```html
-<header>
-    <h1 id="heading">Library</h1>
-</header>
+Die Umstellung auf Klassen erfolgte in einem separaten Branch:
 
-<!-- Formular in einem Dialog -->
-<dialog id="new-book-dialog">
-    <form method="dialog">
-        <div>
-            <label for="title">
-                <input type="text" name="title" id="title" placeholder="Titel" required>
-            </label>
-            <label for="author">
-                <input type="text" name="author" id="author" placeholder="Autor" required>
-            </label>
-            <label for="pages">
-                <input type="text" name="pages" id="pages" placeholder="Seitenanzahl" required>
-            </label>
-            <label for="read">
-                <input type="checkbox" name="read" id="read">
-                Bereits gelesen?
-            </label>
-        </div>
-        <div>
-            <input type="submit" id="add-button" value="Hinzufügen">
-            <input type="submit" name="close-dialog" id="close-dialog" value="Schließen">
-        </div>
-    </form>
-</dialog>
-
-<div id="button-div">
-    <button id="add-new-book">+ Neues Buch hinzufügen</button>
-</div>
-
-<output></output>
+```bash
+git checkout -b refactor/classes
 ```
 
-## 📁 Projektstruktur (geplant)
+Nach Abschluss der Änderungen wurde ein Pull Request erstellt und erfolgreich in den Hauptbranch integriert.
 
-my-library/
- ┣ index.html
- ┣ style.css
- ┣ script.js
- ┗ README.md
+## 📁 Projektstruktur
+
+    my-library/
+     ┣ index.html
+     ┣ style.css
+     ┣ script.js
+     ┗ README.md
 
 ## 👨‍💻 Mitwirkende
 
-- Behlül Samil Selcuk – Projektleitung & Entwicklung
-
-## 📄 Lizenz
-Dieses Projekt steht unter der MIT-Lizenz. Siehe `LICENSE`-Datei für Details.
+*   Behlül Samil Selcuk – Projektleitung & Entwicklung

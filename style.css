@@ -40,6 +40,52 @@ header {
     background-color: transparent;
 }
 
+/* === DIALOG === */
+#new-book-dialog {
+    width: 350px;
+    height: 380px;
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(164, 164, 164);
+}
+
+form > div {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#title,
+#author,
+#pages {
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.7rem;
+    padding: 10px 20px;
+}
+
+label:last-of-type {
+    margin-bottom: 30px;
+}
+
+#add-button,
+#close-dialog {
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+}
+
+#add-button {
+    background-color: rgb(116, 253, 116);
+}
+
+#close-dialog {
+    background-color: rgb(238, 93, 93);
+}
+
 /* === FORMULAR IN DIALOG === */
 output {
     display: flex;
@@ -94,50 +140,4 @@ output {
     padding: 10px 50px;
     border-radius: 10px;
     border: none;
-}
-
-/* === DIALOG === */
-#new-book-dialog {
-    width: 350px;
-    height: 380px;
-    border: none;
-    border-radius: 10px;
-    background-color: rgb(174, 174, 174);
-}
-
-form > div {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-#title,
-#author,
-#pages {
-    width: 100%;
-    border: none;
-    border-radius: 5px;
-    font-size: 0.7rem;
-    padding: 10px 20px;
-}
-
-label:last-of-type {
-    margin-bottom: 30px;
-}
-
-#add-button,
-#close-dialog {
-    font-size: 0.7rem;
-    font-weight: 600;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-}
-
-#add-button {
-    background-color: rgb(116, 253, 116);
-}
-
-#close-dialog {
-    background-color: rgb(238, 93, 93);
 }

@@ -1,20 +1,35 @@
 const myLibrary = [];
 
-// Object Constructor um Bücher zu erstellen
-function Book(title, author, pages, read) {
-    if (!new.target) {
-        throw Error('Must use the new operator to call the function!');
+// Class um Instanzen von Büchern zu erstellen mit der Methode, den Gelesenen-Status zu ändern
+class Book {
+    constructor(title, author, pages, read) {
+        this.id = crypto.randomUUID();
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = read;
     }
-    this.id = crypto.randomUUID();
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
+
+    toggleReadStatus() {
+        this.read = !this.read;
+    }
 }
 
-Book.prototype.toggleReadStatus = function () {
-    this.read = !this.read;
-}
+// // Object Constructor um Bücher zu erstellen
+// function Book(title, author, pages, read) {
+//     if (!new.target) {
+//         throw Error('Must use the new operator to call the function!');
+//     }
+//     this.id = crypto.randomUUID();
+//     this.title = title;
+//     this.author = author;
+//     this.pages = pages;
+//     this.read = read;
+// }
+
+// Book.prototype.toggleReadStatus = function () {
+//     this.read = !this.read;
+// }
 
 // Funktion zum Hinzufügen eines neuen Buchs in das Array "myLibrary"
 function addBookToLibrary(title, author, pages, read) {
